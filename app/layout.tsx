@@ -3,16 +3,17 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aurea-skin-clinic-landing.vercel.app"),
-  title: "AUREA Skin Clinic — Dermatology Landing Page Concept",
+  title: "AUREA Skin Clinic — Beauty-Tech Aesthetic Landing",
   description:
-    "Caso conceptual de landing page para dermatología estética enfocado en confianza clínica, UX responsive, agendamiento y marketing de salud responsable.",
+    "Caso conceptual de landing page para una clínica estética contemporánea con dirección beauty-tech, UX responsive, agendamiento y comunicación de salud responsable.",
   applicationName: "AUREA Skin Clinic",
   authors: [{ name: "Sara Duque" }],
   creator: "Sara Duque",
   keywords: [
     "landing page",
+    "aesthetic clinic",
     "dermatology",
-    "aesthetic medicine",
+    "beauty tech",
     "UX/UI",
     "frontend",
     "booking UX",
@@ -22,9 +23,9 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
   openGraph: {
-    title: "AUREA Skin Clinic — Landing Page Concept",
+    title: "AUREA Skin Clinic — Beauty-Tech Landing Concept",
     description:
-      "Caso de portafolio de dermatología estética centrado en confianza, valoración responsable y conversión sin claims inventados.",
+      "Caso de portafolio para una clínica estética con identidad beauty-tech, valoración responsable y conversión sin claims inventados.",
     url: "/",
     siteName: "AUREA Skin Clinic",
     locale: "es_CO",
@@ -32,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AUREA Skin Clinic — Landing Page Concept",
+    title: "AUREA Skin Clinic — Beauty-Tech Landing Concept",
     description:
-      "Caso conceptual de dermatología estética enfocado en UX, frontend y conversión responsable.",
+      "Concepto de clínica estética enfocado en beauty-tech, UX, frontend y conversión responsable.",
   },
 };
 
