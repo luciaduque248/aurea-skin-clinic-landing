@@ -29,20 +29,20 @@ export function BookingForm() {
         aria-live="polite"
       >
         <span className="booking-success-mark" aria-hidden="true">✓</span>
-        <p className="eyebrow eyebrow-light">Solicitud demostrativa completada</p>
+        <p className="kicker kicker-light">Demo completada</p>
         <h3>Tu valoración quedaría reservada aquí.</h3>
         <p>
-          En una implementación real, este paso conectaría con agenda, CRM o confirmación por correo. En esta demo no almacenamos ni enviamos datos.
+          En una implementación real, este paso conectaría con agenda, CRM o confirmación por correo. Esta demo no almacena ni envía información.
         </p>
-        <button type="button" className="text-link text-link-light" onClick={() => setSent(false)}>
-          Volver al formulario <span aria-hidden="true">↗</span>
+        <button type="button" onClick={() => setSent(false)}>
+          Volver al formulario ↗
         </button>
       </div>
     );
   }
 
   return (
-    <form className="booking-form" onSubmit={handleSubmit} noValidate={false}>
+    <form className="booking-form" onSubmit={handleSubmit}>
       <div className="booking-grid">
         <label>
           <span>Nombre</span>
@@ -57,7 +57,7 @@ export function BookingForm() {
           <input name="phone" type="tel" autoComplete="tel" placeholder="+57 300 000 0000" required />
         </label>
         <label>
-          <span>Motivo de valoración</span>
+          <span>¿Qué quieres conversar?</span>
           <select name="focus" defaultValue="" required>
             <option value="" disabled>Selecciona una opción</option>
             <option value="texture">Textura y uniformidad</option>
@@ -69,11 +69,11 @@ export function BookingForm() {
       </div>
 
       <label className="booking-message">
-        <span>¿Qué te gustaría conversar en la valoración?</span>
+        <span>Cuéntanos un poco más</span>
         <textarea
           name="message"
           rows={4}
-          placeholder="Cuéntanos tu objetivo o las preguntas que quisieras llevar a consulta."
+          placeholder="Escribe aquí las preguntas o el objetivo que llevarías a una valoración."
         />
       </label>
 
@@ -86,7 +86,7 @@ export function BookingForm() {
 
       <div className="booking-footer">
         <p>Demo de UX. Sin diagnóstico, agenda real, almacenamiento ni seguimiento clínico.</p>
-        <button type="submit" className="button button-ivory">Agendar valoración</button>
+        <button type="submit" className="button">Agendar valoración</button>
       </div>
     </form>
   );
