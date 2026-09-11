@@ -94,4 +94,4 @@ npm run build
 `main` stable · `develop` integration · `feature/*` work branches.
 
 ## Status
-**v2 visual redesign · portfolio-ready after QA**
+**v2 beauty-tech redesign · portfolio-ready**
