@@ -290,9 +290,29 @@ button { color: inherit; }
 
 @media (max-width: 720px) {
   .section-shell { width: min(100% - 28px, 1440px); }
-  .header-inner { width: calc(100% - 28px); min-height: 70px; grid-template-columns: 1fr; }
-  .header-inner > .button { display: none; }
+  .header-inner {
+    width: calc(100% - 28px);
+    min-height: 70px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+  .header-inner > .button {
+    display: inline-flex;
+    min-height: 42px;
+    padding-inline: 14px;
+    white-space: nowrap;
+    font-size: 0;
+    box-shadow: none;
+  }
+  .header-inner > .button::after {
+    content: "Agendar valoración";
+    color: white;
+    font-size: 9px;
+    line-height: 1;
+    letter-spacing: .08em;
+  }
   .brand-word { font-size: 22px; }
+  .brand-sub { font-size: 7px; letter-spacing: .22em; }
 
   .hero { background: var(--brown-deep); }
   .hero-inner {
@@ -365,33 +385,20 @@ button { color: inherit; }
   .focus-tabs { grid-template-columns: 1fr; }
   .focus-content { grid-template-columns: 1fr; gap: 28px; }
   .faq { padding-block: 84px; gap: 40px; }
-  .booking { padding-block: 80px 118px; }
+  .booking { padding-block: 80px; }
   .booking-grid { grid-template-columns: 1fr; }
   .booking-footer { align-items: stretch; flex-direction: column; }
   .footer-grid { align-items: flex-start; flex-direction: column; }
   .footer-copy { text-align: left; }
-  .mobile-cta {
-    position: fixed;
-    z-index: 60;
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
-    min-height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 18px;
-    background: #b79d89;
-    color: white;
-    box-shadow: 0 16px 44px rgba(45,33,28,.25);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-  }
+  .mobile-cta { display: none; }
 }
 
 @media (max-width: 380px) {
+  .header-inner { gap: 8px; }
+  .header-inner > .button { min-height: 40px; padding-inline: 11px; }
+  .header-inner > .button::after { font-size: 8px; letter-spacing: .06em; }
+  .brand-word { font-size: 20px; }
+  .brand-sub { font-size: 6.5px; letter-spacing: .18em; }
   .hero-copy { padding: 108px 17px 38px; }
   .hero h1 { font-size: 3.3rem; max-width: 310px; }
   .hero-description { max-width: 295px; }
