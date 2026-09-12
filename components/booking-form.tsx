@@ -21,21 +21,15 @@ export function BookingForm() {
 
   if (sent) {
     return (
-      <div
-        ref={successRef}
-        tabIndex={-1}
-        className="booking-success"
-        role="status"
-        aria-live="polite"
-      >
+      <div ref={successRef} tabIndex={-1} className="booking-success" role="status" aria-live="polite">
         <span className="booking-success-mark" aria-hidden="true">✓</span>
-        <p className="kicker kicker-light">Demo completada</p>
+        <p className="eyebrow">Solicitud demostrativa completada</p>
         <h3>Tu valoración quedaría reservada aquí.</h3>
         <p>
-          En una implementación real, este paso conectaría con agenda, CRM o confirmación por correo. Esta demo no almacena ni envía información.
+          En una implementación real, este paso conectaría con agenda, CRM o confirmación por correo. En esta demo no almacenamos ni enviamos datos.
         </p>
         <button type="button" onClick={() => setSent(false)}>
-          Volver al formulario ↗
+          Volver al formulario →
         </button>
       </div>
     );
@@ -57,24 +51,20 @@ export function BookingForm() {
           <input name="phone" type="tel" autoComplete="tel" placeholder="+57 300 000 0000" required />
         </label>
         <label>
-          <span>¿Qué quieres conversar?</span>
+          <span>Motivo de valoración</span>
           <select name="focus" defaultValue="" required>
             <option value="" disabled>Selecciona una opción</option>
-            <option value="texture">Textura y uniformidad</option>
-            <option value="tone">Tono y apariencia de manchas</option>
-            <option value="sensitivity">Sensibilidad y tolerancia</option>
-            <option value="unsure">No estoy segura todavía</option>
+            <option value="skin">Piel y textura</option>
+            <option value="facial">Cuidado facial</option>
+            <option value="body">Cuidado corporal</option>
+            <option value="unsure">Quiero orientación primero</option>
           </select>
         </label>
       </div>
 
       <label className="booking-message">
-        <span>Cuéntanos un poco más</span>
-        <textarea
-          name="message"
-          rows={4}
-          placeholder="Escribe aquí las preguntas o el objetivo que llevarías a una valoración."
-        />
+        <span>¿Qué te gustaría conversar en la valoración?</span>
+        <textarea name="message" rows={4} placeholder="Cuéntanos tu objetivo o las preguntas que quisieras llevar a consulta." />
       </label>
 
       <label className="booking-consent">

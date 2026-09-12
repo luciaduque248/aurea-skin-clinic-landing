@@ -6,23 +6,23 @@ const focuses = [
   {
     id: "texture",
     label: "Textura",
-    title: "Empecemos por cómo se siente y se ve tu piel.",
-    copy: "La valoración revisaría rutina, antecedentes, tolerancia y aquello que percibes como textura irregular. La interfaz solo organiza la conversación; no diagnostica.",
-    checks: ["Rutina actual", "Cambios recientes", "Tolerancia", "Objetivo de consulta"],
+    title: "Entender la piel antes de intervenir.",
+    copy: "La valoración revisaría rutina, tolerancia, antecedentes y cambios percibidos. El objetivo es ordenar la conversación, no automatizar un diagnóstico.",
+    checks: ["Rutina y productos actuales", "Cambios recientes", "Tolerancia y sensibilidad", "Objetivo de la consulta"],
   },
   {
     id: "tone",
     label: "Tono",
     title: "El contexto importa antes de hablar de pigmentación.",
-    copy: "Se organizarían preguntas sobre cuándo aparecieron cambios de tono, hábitos relevantes y productos utilizados antes de considerar cualquier ruta clínica.",
-    checks: ["Historia del cambio", "Exposición y hábitos", "Productos previos", "Preguntas para consulta"],
+    copy: "Una consulta real tendría que revisar evolución, hábitos, exposición y antecedentes antes de considerar cualquier protocolo estético.",
+    checks: ["Historia del cambio de tono", "Exposición y hábitos", "Productos usados previamente", "Preguntas para valoración"],
   },
   {
     id: "sensitivity",
     label: "Sensibilidad",
-    title: "La tolerancia también forma parte del cuidado.",
-    copy: "La experiencia pone el foco en reacciones previas, sensaciones frecuentes y rutina para que una valoración profesional tenga mejor contexto.",
-    checks: ["Reacciones previas", "Sensaciones frecuentes", "Activos utilizados", "Límites y expectativas"],
+    title: "La tolerancia forma parte del plan.",
+    copy: "La experiencia prioriza reactividad, sensaciones frecuentes y experiencias previas para que la conversación profesional tenga mejor contexto.",
+    checks: ["Reacciones previas", "Sensaciones frecuentes", "Activos utilizados", "Expectativas realistas"],
   },
 ];
 
@@ -32,7 +32,7 @@ export function SkinFocus() {
 
   return (
     <div className="focus-panel">
-      <div className="focus-tabs" role="tablist" aria-label="Motivo principal de valoración">
+      <div className="focus-tabs" role="tablist" aria-label="Motivos de valoración">
         {focuses.map((item, index) => (
           <button
             key={item.id}
@@ -50,15 +50,14 @@ export function SkinFocus() {
 
       <div className="focus-content" role="tabpanel">
         <div>
-          <p className="kicker">Skin check-in · demo UX</p>
+          <p className="eyebrow">Valoración guiada · demo UX</p>
           <h3>{active.title}</h3>
           <p className="focus-copy">{active.copy}</p>
         </div>
-
         <div className="focus-checks">
           {active.checks.map((item) => (
             <div key={item} className="focus-check">
-              <span aria-hidden="true">✓</span>
+              <span aria-hidden="true">→</span>
               <p>{item}</p>
             </div>
           ))}
@@ -66,7 +65,7 @@ export function SkinFocus() {
       </div>
 
       <p className="focus-note">
-        Contenido conceptual de portafolio. No constituye diagnóstico, indicación ni recomendación médica.
+        Contenido conceptual para portafolio. No constituye diagnóstico, indicación ni recomendación médica.
       </p>
     </div>
   );
