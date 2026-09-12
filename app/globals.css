@@ -290,15 +290,68 @@ button { color: inherit; }
 
 @media (max-width: 720px) {
   .section-shell { width: min(100% - 28px, 1440px); }
-  .header-inner { width: calc(100% - 28px); min-height: 70px; }
-  .header-inner > .button { min-height: 42px; padding-inline: 16px; font-size: 9px; }
+  .header-inner { width: calc(100% - 28px); min-height: 70px; grid-template-columns: 1fr; }
+  .header-inner > .button { display: none; }
   .brand-word { font-size: 22px; }
-  .hero-copy { padding: 62px 2px 50px; }
-  .hero h1 { font-size: clamp(3.7rem, 18vw, 5.7rem); }
-  .hero-actions { align-items: stretch; }
-  .hero-actions .button { flex: 1 1 100%; }
-  .hero-visual { min-height: 520px; }
-  .hero-seal { width: 100px; height: 100px; right: 18px; bottom: 18px; }
+
+  .hero { background: var(--brown-deep); }
+  .hero-inner {
+    position: relative;
+    width: 100%;
+    min-height: calc(100svh - 70px);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero-visual {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    min-height: 0;
+    background-position: 58% 22%;
+  }
+  .hero-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(34,24,20,.06) 12%, rgba(34,24,20,.16) 46%, rgba(34,24,20,.88) 100%);
+  }
+  .hero-copy {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: calc(100svh - 70px);
+    justify-content: flex-end;
+    padding: 120px 20px 44px;
+    color: white;
+  }
+  .hero .eyebrow { color: rgba(255,255,255,.78); }
+  .hero h1 {
+    max-width: 360px;
+    margin-top: 14px;
+    font-size: clamp(3.5rem, 15.5vw, 4.9rem);
+    line-height: .87;
+    letter-spacing: -.052em;
+  }
+  .hero h1 em { color: #ead9cc; }
+  .hero-rule { width: 52px; margin: 22px 0 16px; background: rgba(255,255,255,.55); }
+  .hero-description { max-width: 340px; color: rgba(255,255,255,.78); font-size: 13px; line-height: 1.7; }
+  .hero-actions { margin-top: 24px; }
+  .hero-actions .button-primary { min-height: 48px; background: #e5d5c8; color: var(--brown-deep); padding-inline: 22px; }
+  .hero-actions .button-secondary { display: none; }
+  .hero-seal {
+    z-index: 2;
+    width: 86px;
+    height: 86px;
+    right: 18px;
+    top: 20px;
+    bottom: auto;
+    background: rgba(45,33,28,.18);
+  }
+  .hero-seal span { font-size: 28px; }
+  .hero-seal small { width: 64px; font-size: 5.5px; }
+
   .treatments { padding-block: 72px 82px; }
   .treatment-card { display: block; }
   .treatment-image { min-height: 280px; }
@@ -339,10 +392,10 @@ button { color: inherit; }
 }
 
 @media (max-width: 380px) {
-  .header-inner > .button { display: none; }
-  .header-inner { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 3.55rem; }
-  .hero-visual { min-height: 460px; }
+  .hero-copy { padding: 108px 17px 38px; }
+  .hero h1 { font-size: 3.3rem; max-width: 310px; }
+  .hero-description { max-width: 295px; }
+  .hero-seal { width: 78px; height: 78px; right: 14px; top: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
